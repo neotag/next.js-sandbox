@@ -1,7 +1,9 @@
-import { AppProps } from "next/app";
+import React from 'react';
 
-function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+import { AppProps } from 'next/app';
+
+const App = ({ Component, pageProps }: AppProps) => (
+  <Component {...pageProps} />
+);
 
 export default App;

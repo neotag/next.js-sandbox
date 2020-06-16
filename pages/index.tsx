@@ -1,5 +1,6 @@
-import React, { FC } from "react";
-import Head from "next/head";
+import React, { FC } from 'react';
+
+import Head from 'next/head';
 
 const Home: FC = () => {
   return (
@@ -55,7 +56,7 @@ const Home: FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
