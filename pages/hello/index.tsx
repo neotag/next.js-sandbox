@@ -39,10 +39,11 @@ const HelloIndex: FC<EnhancedHelloPageProps> = ({
   const [sleep, setSleep] = useState(0);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // tslint:disable-next-line: insecure-random
     const newSleep = Math.ceil(Math.random() * 10000);
     setSleep(newSleep);
     showHelloPageStart(newSleep);
+    // tslint:disable-next-line: align
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
