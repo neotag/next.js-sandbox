@@ -61,7 +61,7 @@ const Home: FC = () => {
         </a>
       </footer>
 
-      <style jsx>{`
+      <style jsx={true}>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -192,7 +192,7 @@ const Home: FC = () => {
         }
       `}</style>
 
-      <style jsx global>{`
+      <style jsx={true} global={true}>{`
         html,
         body {
           padding: 0;
