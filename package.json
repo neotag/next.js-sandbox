@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
     "precommit": "lint-staged",
     "lint": "eslint '{pages,components}/**/*.{js,jsx,ts,tsx}'; stylelint '{pages,components}/**/*.css'"
   },
