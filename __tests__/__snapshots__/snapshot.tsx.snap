@@ -15,6 +15,15 @@ exports[`renders homepage unchanged 1`] = `
         Next.js!
       </a>
     </h1>
+    <p>
+      <a
+        href="/hello"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        さんぷるぺーじ
+      </a>
+    </p>
     <p
       className="description"
     >
