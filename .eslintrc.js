@@ -79,6 +79,7 @@ module.exports = {
     ],
 
     // react
+    'react/jsx-boolean-value': 'off',
     'react/jsx-filename-extension': [
       'error',
       {
