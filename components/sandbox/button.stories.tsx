@@ -1,0 +1,16 @@
+import React from 'react';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Button } from '@storybook/react/demo';
+
+export default { title: 'Demo Button' };
+
+export const withText = () => <Button>Hello Button</Button>;
+
+export const withEmoji = () => (
+  <Button>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
