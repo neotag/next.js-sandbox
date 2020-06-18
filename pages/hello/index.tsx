@@ -9,7 +9,7 @@ const isLoadingSelector = (state: HelloPageState) => state.isLoading;
 
 const HelloIndex: FC = () => {
   // tslint:disable-next-line: insecure-random
-  const [sleep] = useState(Math.ceil(Math.random() * 10000));
+  const [sleep, setSleep] = useState(Math.ceil(Math.random() * 10000));
   const hello = useSelector(helloSelector);
   const isLoading = useSelector(isLoadingSelector);
   const dispatch = useDispatch();
@@ -17,6 +17,12 @@ const HelloIndex: FC = () => {
   useEffect(() => {
     dispatch(showHelloPage.start({ sleep }));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (sleep > 0) {
+      setTimeout(() => setSleep(sleep - 100), 100);
+    }
+  }, [sleep]);
 
   return (
     <>
