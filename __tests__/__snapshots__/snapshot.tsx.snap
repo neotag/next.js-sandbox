@@ -1,6 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
+exports[`renders HelloPage unchanged with empty store 1`] = `
+Array [
+  <h1>
+    Hello World index page
+  </h1>,
+  <p>
+    こんにちわこんにちわ
+  </p>,
+  <p>
+    message: 
+    
+  </p>,
+  <ul>
+    <li>
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Go to top page.
+      </a>
+    </li>
+    <li>
+      <a
+        href="/hello"
+      >
+        Refresh this page.
+      </a>
+    </li>
+  </ul>,
+]
+`;
+
+exports[`renders Homepage unchanged 1`] = `
 <div
   className="container"
 >
