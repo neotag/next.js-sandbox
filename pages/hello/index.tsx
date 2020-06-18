@@ -1,49 +1,21 @@
 import React, { FC, useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
 import { showHelloPage } from '../../actions/hello';
 import { HelloPageState } from '../../reducer';
-import { Hello } from '../../services/hello/models';
 
-interface StateProps {
-  hello: Hello;
-  isLoading?: boolean;
-}
+const helloSelector = (state: HelloPageState) => state.hello;
+const isLoadingSelector = (state: HelloPageState) => state.isLoading;
 
-interface DispatchProps {
-  showHelloPageStart: (sleep: number) => void;
-}
-
-type EnhancedHelloPageProps = StateProps & DispatchProps;
-
-const mapStateToProps = (state: HelloPageState): StateProps => ({
-  hello: state.hello,
-  isLoading: state.isLoading,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps =>
-  bindActionCreators(
-    {
-      showHelloPageStart: (sleep: number) => showHelloPage.start({ sleep }),
-    },
-    dispatch,
-  );
-
-const HelloIndex: FC<EnhancedHelloPageProps> = ({
-  hello,
-  isLoading,
-  showHelloPageStart,
-}) => {
-  const [sleep, setSleep] = useState(0);
+const HelloIndex: FC = () => {
+  // tslint:disable-next-line: insecure-random
+  const [sleep] = useState(Math.ceil(Math.random() * 10000));
+  const hello = useSelector(helloSelector);
+  const isLoading = useSelector(isLoadingSelector);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // tslint:disable-next-line: insecure-random
-    const newSleep = Math.ceil(Math.random() * 10000);
-    setSleep(newSleep);
-    showHelloPageStart(newSleep);
-    // tslint:disable-next-line: align
+    dispatch(showHelloPage.start({ sleep }));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -62,4 +34,4 @@ const HelloIndex: FC<EnhancedHelloPageProps> = ({
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HelloIndex);
+export default HelloIndex;
