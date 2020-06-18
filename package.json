@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build; build-storybook -c .storybook -o public/storybook",
+    "build": "next build; build-storybook -c .storybook -o public/_storybook",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "test": "jest --watch",
