@@ -8,9 +8,9 @@ function* runShowHelloPage(action: ReturnType<typeof showHelloPage.start>) {
   const { sleep } = action.payload;
 
   try {
-    const hello = yield call(getRandomMessage, sleep);
+    const message = yield call(getRandomMessage, sleep);
 
-    yield put(showHelloPage.succeed({ sleep }, { hello }));
+    yield put(showHelloPage.succeed({ sleep }, { hello: { message } }));
   } catch (error) {
     yield put(showHelloPage.fail({ sleep }, error));
   }
