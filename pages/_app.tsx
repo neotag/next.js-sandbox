@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { applyMiddleware, createStore } from 'redux';
 
 import reducer from '../reducer';
 import rootSaga from '../sagas/hello';
