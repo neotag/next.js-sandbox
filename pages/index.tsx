@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Home: FC = () => {
   return (
@@ -14,6 +15,12 @@ const Home: FC = () => {
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <p>
+          <Link href="/hello">
+            <a>さんぷるぺーじ</a>
+          </Link>
+        </p>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
