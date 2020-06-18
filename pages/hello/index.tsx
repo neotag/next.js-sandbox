@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
+import Link from 'next/link';
+
 import { showHelloPage } from '../../actions/hello';
 import { HelloPageState } from '../../reducer';
 
@@ -36,6 +38,14 @@ const HelloIndex: FC = () => {
       ) : (
         <p>message: {hello.message}</p>
       )}
+      <ul>
+        <li>
+          <Link href="/">Go to top page.</Link>
+        </li>
+        <li>
+          <a href="/hello">Refresh this page.</a>
+        </li>
+      </ul>
     </>
   );
 };
