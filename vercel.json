@@ -3,7 +3,7 @@
     {
       "src": "/_storybook",
       "status": 301,
-      "headers": { "Location": "/_storybook/" }
+      "headers": { "Location": "/_storybook/?path=/story/welcome--to-storybook" }
     }
   ]
 }
