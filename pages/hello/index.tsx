@@ -8,13 +8,18 @@ import { Heading } from '@/components/sandbox/heading';
 import { showHelloPage } from '../../actions/hello';
 import { HelloPageState } from '../../reducer';
 
+interface HelloPageProps {
+  defaultSleep?: number;
+}
+
 const helloSelector = (state: HelloPageState) => state.hello;
 const isLoadingSelector = (state: HelloPageState) => state.isLoading;
 
-const HelloIndex: FC = () => {
+const HelloIndex: FC<HelloPageProps> = ({
   // tslint:disable-next-line: insecure-random
-  const [sleep, setSleep] = useState(Math.ceil(Math.random() * 10000));
-  const [defaultSleep] = useState(sleep);
+  defaultSleep = Math.ceil(Math.random() * 10000),
+}) => {
+  const [sleep, setSleep] = useState(defaultSleep);
   const hello = useSelector(helloSelector);
   const isLoading = useSelector(isLoadingSelector);
   const dispatch = useDispatch();
