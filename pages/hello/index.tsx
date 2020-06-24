@@ -4,15 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { Heading } from '@/components/sandbox/heading';
 import { showHelloPage } from '../../actions/hello';
 import { HelloPageState } from '../../reducer';
+
+interface HelloPageProps {
+  defaultSleep?: number;
+}
 
 const helloSelector = (state: HelloPageState) => state.hello;
 const isLoadingSelector = (state: HelloPageState) => state.isLoading;
 
-const HelloIndex: FC = () => {
+const HelloIndex: FC<HelloPageProps> = ({
   // tslint:disable-next-line: insecure-random
-  const [sleep, setSleep] = useState(Math.ceil(Math.random() * 10000));
+  defaultSleep = Math.ceil(Math.random() * 10000),
+}) => {
+  const [sleep, setSleep] = useState(defaultSleep);
   const hello = useSelector(helloSelector);
   const isLoading = useSelector(isLoadingSelector);
   const dispatch = useDispatch();
@@ -32,6 +39,14 @@ const HelloIndex: FC = () => {
       <Head>
         <title>Hello World</title>
       </Head>
+      <Heading
+        titleText={`Hello World index page. sleep: ${defaultSleep}`}
+        leadText={
+          isLoading
+            ? `Message is loading. waiting for ${sleep}ms`
+            : `message: ${hello.message}`
+        }
+      />
       <h1>Hello World index page</h1>
       <p>こんにちわこんにちわ</p>
       {isLoading ? (

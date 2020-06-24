@@ -110,7 +110,7 @@ module.exports = {
     // import
     'import/extensions': [
       'error',
-      'always',
+      'ignorePackages',
       {
         js: 'never',
         jsx: 'never',
@@ -119,6 +119,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    "import/no-unresolved": ["error", { ignore: ["^@"] }],
   },
   settings: {
     'import/parsers': {

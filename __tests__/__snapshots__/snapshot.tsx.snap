@@ -3,6 +3,12 @@
 exports[`renders HelloPage unchanged with empty store 1`] = `
 Array [
   <h1>
+    Hello World index page. sleep: 0
+  </h1>,
+  <p>
+    message: 
+  </p>,
+  <h1>
     Hello World index page
   </h1>,
   <p>

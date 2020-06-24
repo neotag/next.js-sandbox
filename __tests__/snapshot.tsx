@@ -22,7 +22,7 @@ it('renders HelloPage unchanged with empty store', () => {
     .create(
       // tslint:disable-next-line: jsx-wrap-multiline
       <Provider store={emptyStore}>
-        <HelloPage />
+        <HelloPage defaultSleep={0} />
       </Provider>,
     )
     .toJSON();
